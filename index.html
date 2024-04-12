@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+    <title>Tax Calculator</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Tax Calculator</h1>
+    <form id="taxForm">
+        <label for="age">Age:</label>
+        <select id="age" name="age">
+            <option value="" disabled selected>Select Age Group</option>
+            <option value="<40">&lt;40</option>
+            <option value=">=40 & <60">&ge;40 &lt;60</option>
+            <option value=">=60">&ge;60</option>
+        </select>
+        <span class="error-icon" title="Age is mandatory!">!</span>
+        <div class="tooltip">Age is mandatory!</div>
+    
+        <label for="income">Income (Rupees):</label>
+        <input type="number" id="income" name="income" min="0">
+        <span class="error-icon" title="Enter a valid income!">!</span>
+        <div class="tooltip">Enter a valid income!</div>
+    
+        <label for="extraIncome">Extra Income (Rupees):</label>
+        <input type="number" id="extraIncome" name="extraIncome" min="0">
+        <span class="error-icon" title="Enter a valid extra income amount!">!</span>
+        <div class="tooltip">Enter a valid extra income amount!</div>
+    
+        <label for="deductions">Deductions (Rupees):</label>
+        <input type="number" id="deductions" name="deductions" min="0">
+        <span class="error-icon" title="Enter a valid deduction amount!">!</span>
+        <div class="tooltip">Enter a valid deduction amount!</div>
+    
+        <button type="submit">Calculate Tax</button>
+    </form>
+    
+    <div id="modal">
+        <h2>Final Tax Calculation</h2>
+        <p><strong>Age:</strong> <span id="modalAge"></span></p>
+        <p><strong>Income:</strong> <span id="modalIncome"></span> Rupees</p>
+        <p><strong>Extra Income:</strong> <span id="modalExtraIncome"></span> Rupees</p>
+        <p><strong>Deductions:</strong> <span id="modalDeductions"></span> Rupees</p>
+        <p><strong>Tax:</strong> <span id="modalTax"></span> Rupees</p>
+        <p><strong>Final Income After Tax:</strong> <span id="modalFinalIncome"></span> Rupees</p>
+        <button id="closeModalBtn">Close</button>
+    </div>
+  </body>
+</html>
